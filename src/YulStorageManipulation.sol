@@ -2,10 +2,16 @@
 pragma solidity ^0.8.21;
 
 contract YulStorageManipulation {
-    uint256 public stor0;
+    function getStor0() public returns (uint256 result) {
+        assembly {
+            result := sload(0x00)
+        }
+    }
 
     function setStor0(uint256 newNumber) public {
-        stor0 = newNumber;
+        assembly {
+            sstore(0x00, newNumber)
+        }
     }
 
     function incrementStor0() public {

@@ -14,16 +14,16 @@ contract YulStorageManipulationTest is Test {
 
     function test_Increment() public {
         y.incrementStor0();
-        assertEq(y.stor0(), 256);
+        assertEq(y.getStor0(), 256);
     }
 
     function test_Decrement() public {
         y.decrementStor0();
-        assertEq(y.stor0(), 254);
+        assertEq(y.getStor0(), 254);
     }
 
     function testFuzz_setStor0(uint256 x) public {
         y.setStor0(x);
-        assertEq(y.stor0(), x);
+        assertEq(y.getStor0(), x);
     }
 }

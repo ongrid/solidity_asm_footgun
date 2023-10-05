@@ -2,7 +2,7 @@
 pragma solidity ^0.8.21;
 
 contract YulStorageManipulation {
-    function getStor0() public returns (uint256 result) {
+    function getStor0() public view returns (uint256 result) {
         assembly {
             result := sload(0x00)
         }
